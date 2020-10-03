@@ -1,0 +1,26 @@
+{
+  "name": "react-bootstrap-components",
+  "version": "1.0.0",
+  "description": "\"A repository for react components\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UmarEhsan/React-Bootstrap-Components.git"
+  },
+  "keywords": [
+    "react",
+    "formik",
+    "react-bootstrap",
+    "component",
+    "design"
+  ],
+  "author": "Ehsan Umar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UmarEhsan/React-Bootstrap-Components/issues"
+  },
+  "homepage": "https://github.com/UmarEhsan/React-Bootstrap-Components#readme"
+}
