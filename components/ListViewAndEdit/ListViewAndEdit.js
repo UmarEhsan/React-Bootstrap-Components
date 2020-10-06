@@ -1,66 +1,68 @@
 import React, {useState}  from 'react';
-// import EditView from './EditView';
-export default function ProfileListing({ data, editType, edit }) {
+import EditView from './EditView';
+export default function ListViewAndEdit({ data, editType, edit }) {
 
-    //This object is for mapping data with this model to create dynamic form.
-    // const [fieldsMapping, setFieldsMapping] = useState({
-    //     image: {
-    //         type: 'image',
-    //         label: 'Image',
-    //         name: 'image',
-    //         id: 'image',
-    //     },
-    //     title: {
-    //         type: 'text',
-    //         id: 'title',
-    //         name: 'title',
-    //         label: 'Title',
-    //     },
-    //     summary: {
-    //         type: 'textarea',
-    //         id: 'summary',
-    //         name: 'summary',
-    //         label: 'Summary'
-    //     },
-    //     highlihtedTags: {
-    //         type: 'chips',
-    //         id: 'highlihtedTags',
-    //         name: 'highlihtedTags',
-    //         label: 'Highlihted Tags'
-    //     },
-    //     start_date: {
-    //         type: 'text',
-    //         id: 'start_date',
-    //         name: 'start_date',
-    //         label: 'Start Date'
-    //     },
-    //     is_present: {
-    //         type: 'checkbox',
-    //         id: 'is_present',
-    //         name: 'is_present',
-    //         label: 'Present'
-    //     },
-    //     end_date: {
-    //         type: 'text',
-    //         id: 'end_date',
-    //         name: 'end_date',
-    //         label: 'End Date'
-    //     },
-    //     duration: {
-    //         type: 'text',
-    //         id: 'duration',
-    //         name: 'duration',
-    //         label: 'Duration'
-    //     },
-    //     description: {
-    //         type: 'textarea',
-    //         id: 'description',
-    //         name: 'description',
-    //         label: 'Description'
-    //     }
+    const [fieldsMapping, setFieldsMapping] = useState({
+        image: {
+            type: 'image',
+            label: 'Image',
+            name: 'image',
+            id: 'image',
+            width: '100',
+            height: '100',
+        },
+        title: {
+            type: 'text',
+            id: 'title',
+            name: 'title',
+            label: 'Title',
+        },
+        summary: {
+            type: 'textarea',
+            id: 'summary',
+            name: 'summary',
+            label: 'Summary'
+        },
+        highlihtedTags: {
+            type: 'chips',
+            id: 'highlihtedTags',
+            name: 'highlihtedTags',
+            label: 'Highlihted Tags'
+        },
+        start_date: {
+            type: 'text',
+            id: 'start_date',
+            name: 'start_date',
+            label: 'Start Date'
+        },
+        is_present: {
+            type: 'checkbox',
+            id: 'is_present',
+            name: 'is_present',
+            label: "I'm Currently working on this role"
+        },
+        end_date: {
+            type: 'text',
+            id: 'end_date',
+            name: 'end_date',
+            label: 'End Date',
+            is_disabled: 'is_present',
+        },
+        duration: {
+            type: 'text',
+            id: 'duration',
+            name: 'duration',
+            label: 'Duration'
+        },
+        description: {
+            type: 'textarea',
+            id: 'description',
+            name: 'description',
+            label: 'Description'
+        }
 
 
-    // });
+    });
 
     const editItem = (elem, index, type) => {
         edit(type, index);
@@ -104,15 +106,15 @@ export default function ProfileListing({ data, editType, edit }) {
                                 <p>{elem.description && elem.description}</p>
                                 </div>
                             </> : 
-                            <p>Edit view is process</p>
-                            // <EditView 
-                            //     mapping = {fieldsMapping}
-                            //     item = {elem}
-                            //   />
+                            
+                            <EditView 
+                                mapping = {fieldsMapping}
+                                item = {elem}
+                              />
                               }
-                        {/* <div className="col-1 edit">
+                        <div className="col-1 edit">
                             <p onClick={() => editItem(elem, idx, editType)}>Edit</p>
-                        </div> */}
+                        </div>
 
                     </div>
 

@@ -43,7 +43,7 @@ export default class Profile extends React.PureComponent {
                     title={listings.title}
                     editType={'listing'}
                     edit={this.handleChange}
-                    test={this.state}
+                  
                  />
               
                 </div>
