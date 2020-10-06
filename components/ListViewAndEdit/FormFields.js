@@ -1,5 +1,5 @@
-
-export const getFormsFields = (object, values, handleChange) => {
+import { InputField, CheckboxInput } from '../Inputs';
+export const getFormsFields = (object, values, handleChange, item , mapping) => {
 
     let fields = [];
     Object.keys(item).forEach(element => {
@@ -40,6 +40,7 @@ export const getFormsFields = (object, values, handleChange) => {
                                 label={mapping[element].label}
                                 onChange={handleChange(mapping[element].name)}
                                 value={values[element]}
+                                type={mapping[element].type}
                                 disabled={values[mapping[element].is_disabled]}
                             />
                         </>
@@ -51,4 +52,14 @@ export const getFormsFields = (object, values, handleChange) => {
         }
     });
     return fields.filter(Boolean);
+}
+
+export const formInitialValues = (item, mapping) => {
+    let values = {};
+    Object.keys(item).forEach(element => {
+        if (mapping[element]) {
+            values[element] = item[element];
+        }
+    });
+   return values;
 }

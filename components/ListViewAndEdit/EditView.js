@@ -1,29 +1,20 @@
 import React from 'react';
 import { Field, Form, Formik, useFormik } from 'formik';
 import * as yup from 'yup';
-import { InputField, CheckboxInput } from './Inputs';
-import {getFormsFields} from './FormFields';
+
+import { getFormsFields, formInitialValues } from './FormFields';
 export default function EditView({ mapping, item }) {
-     
-
-    const formInitialValues = (element) => {
-        let values = {};
-        Object.keys(item).forEach(element => {
-            if (mapping[element]) {
-                values[element] = item[element];
-            }
-        });
-       return values;
-    }
-
-    return (
+     return (
         <div className="edit">
             {
-               <Formik initialValues={formInitialValues()}>
+               <Formik initialValues={formInitialValues(item, mapping)}>
                     {
                         ({ values, handleChange }) => {
                             return (
-                                getFields(formInitialValues(), values, handleChange)
+                                //This method has to be change 
+                                //as it's not the good approach 
+                                //to pass parameters like this
+                                getFormsFields(formInitialValues(), values, handleChange, item, mapping)
                             )
                         }
                     }
